@@ -1,0 +1,13 @@
+:root {
+    --background-color: rgb(37, 36, 35);
+    --text-color: rgb(255, 255, 255);
+    --anchor-color: rgb(97, 239, 159);
+    --focus-outline-color: rgb(97, 123, 239);
+    --checkbox-content-selected: '[x]';
+    --checkbox-content-hovered: '[-]';
+    --checkbox-content: '[ ]';
+
+    --radio-content-selected: '(o)';
+    --radio-content-hovered: '(-)';
+    --radio-content: '( )';
+}

@@ -1,0 +1,221 @@
+@import url('./variables.css');
+@import url('./forms.css');
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "VT323", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Improve line wrapping */
+p {
+  font-size: 1em;
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.32) 0;
+
+  text-wrap: pretty;
+  width: 65ch;
+  max-width: 100%;
+}
+
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: calc(1ex / 0.38);
+  margin: calc(1ex / 0.38) 0;
+}
+
+h4, h5, h6 {
+  font-size: 1.5em;
+  line-height: calc(1ex / 0.37);
+  margin: calc(1ex / 0.37) 0;
+}
+
+/* Styles */
+
+main {
+  padding: 1rem;
+}
+
+button {
+  background-color: var(--anchor-color);
+  color: var(--background-color);
+  border: none;
+  cursor: pointer;
+
+  line-height: .75;
+  padding: .25rem;
+  position: relative;
+}
+
+/** Lists */
+
+ol,
+ul {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
+
+ul {
+  list-style-type: "~  ";
+}
+
+/* Anchors */
+
+a {
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a::before,
+a::after {
+  text-decoration: none;
+  display: inline-block;
+  color: #5c6370;
+}
+
+a::before {
+  content: '[';
+}
+
+a::after {
+  content: ']';
+}
+
+a[href^="http"]:after {
+  content: '↗]';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+/* Dialogs */
+
+dialog {
+  background-color: var(--background-color);
+  color: white;
+  padding: 1rem;
+  border: 1px solid white;
+  box-shadow: rgba(255, 255, 255, 0.25) .5rem .5rem;
+  margin: auto;
+}
+
+dialog header {
+  margin: -1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+::backdrop {
+  background-color: #252423;
+  opacity: 0.75;
+}
+
+/* HR */
+
+hr {
+  border: none;
+  background-color: transparent;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+hr::before {
+  content: '<--->';
+}

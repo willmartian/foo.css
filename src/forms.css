@@ -1,0 +1,77 @@
+label {
+    cursor: pointer;
+}
+
+*:focus-visible {
+    outline-color: var(--focus-outline-color);
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+/* Radio */
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: unset;
+    /* Not removed via appearance */
+    margin: 0;
+
+    cursor: pointer;
+
+    &~label {
+        padding-left: 1rem;
+    }
+}
+
+input[type="radio"]::before {
+    content: var(--radio-content);
+    background: linear-gradient(90deg, var(--text-color) 1ch, var(--anchor-color) 1ch, var(--anchor-color) 2ch, var(--text-color) 2ch, var(--text-color) 2ch);
+    color: transparent;
+    background-clip: text;
+}
+
+input[type="radio"]:checked:before,
+input[type="radio"]:checked:hover:before {
+    content: var(--radio-content-selected);
+}
+
+input[type="radio"]:hover:before {
+    content: var(--radio-content-hovered);
+}
+
+/* Checkbox */
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: unset;
+    /* Not removed via appearance */
+    margin: 0;
+
+    cursor: pointer;
+
+    &~label {
+        padding-left: 1rem;
+    }
+}
+
+input[type="checkbox"]::before {
+    content: var(--checkbox-content);
+    background: linear-gradient(90deg, var(--text-color) 1ch, var(--anchor-color) 1ch, var(--anchor-color) 2ch, var(--text-color) 2ch, var(--text-color) 2ch);
+    color: transparent;
+    background-clip: text;
+}
+
+input[type="checkbox"]:checked:before,
+input[type="checkbox"]:checked:hover:before {
+    content: var(--checkbox-content-selected);
+}
+
+input[type="checkbox"]:hover:before {
+    content: var(--checkbox-content-hovered);
+}
